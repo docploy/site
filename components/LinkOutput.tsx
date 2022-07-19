@@ -20,7 +20,7 @@ function LinkOutput() {
         </p>
         <p className="flex flex-row gap-2 items-top">
           <span className="pr-2 text-gray-400">2</span>
-          <span>Validating each file's outbound links...</span>
+          <span>Validating each file&apos;s outbound links...</span>
         </p>
         <p className="flex flex-row gap-2 items-top">
           <span className="pr-2 text-gray-400">3</span>

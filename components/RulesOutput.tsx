@@ -30,8 +30,8 @@ function RulesOutput() {
           <span className="pr-2 text-gray-400">4</span>
           <span>
             <span className="pl-4">
-              ❌ Missing main heading. Specify a main heading by adding '#
-              Title' at the top of the file.
+              ❌ Missing main heading. Specify a main heading by adding &apos;#
+              Title&apos; at the top of the file.
             </span>
           </span>
         </p>

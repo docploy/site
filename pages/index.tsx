@@ -26,7 +26,7 @@ const Home: NextPage = () => {
             </h1>
             <h2 className="m-auto max-w-2xl mb-12 text-3xl text-center text-slate-600">
               Docploy checks your technical documentation against your code and
-              standardizes everyone's writing style. Set up in 5 minutes.
+              standardizes everyone&apos;s writing style. Set up in 5 minutes.
             </h2>
             <div className="text-center">
               <a href={GITHUB_ACTION_URL}>
