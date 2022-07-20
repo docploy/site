@@ -7,6 +7,7 @@ import LinkOutput from 'components/LinkOutput';
 import Navbar from 'components/Navbar';
 import type { NextPage } from 'next';
 import RulesOutput from 'components/RulesOutput';
+import Script from 'next/script';
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +15,13 @@ const Home: NextPage = () => {
       <Head>
         <title>Docploy</title>
       </Head>
+
+      {/* Import Plausible Analytics script */}
+      <Script
+        defer
+        data-domain="docploy.com"
+        src="https://plausible.io/js/plausible.js"
+      ></Script>
 
       <div className="m-auto max-w-7xl">
         <nav>
