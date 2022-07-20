@@ -1,5 +1,6 @@
 import CodeSnippet from 'components/CodeSnippet';
 import DeployOutput from 'components/DeployOutput';
+import EmailSignup from 'components/EmailSignup';
 import { GITHUB_ACTION_URL } from 'constants/url';
 import Head from 'next/head';
 import LinkOutput from 'components/LinkOutput';
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
         </nav>
 
         <main className="m-auto max-w-4xl my-12">
-          <div className="mb-24">
+          <div className="mb-12">
             <h1 className="font-bold mb-12 text-5xl text-center">
               Save your developers time with always up-to-date documentation
             </h1>
@@ -35,6 +36,10 @@ const Home: NextPage = () => {
                 </button>
               </a>
             </div>
+          </div>
+
+          <div className="mb-24">
+            <EmailSignup />
           </div>
 
           <div className="gap-x-4 grid grid-cols-2 mb-24">
