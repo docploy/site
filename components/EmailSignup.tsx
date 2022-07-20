@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { usePlausible } from 'next-plausible';
 import { useState } from 'react';
 
 const STATUS = {
@@ -10,6 +11,7 @@ const STATUS = {
 function EmailSignup() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState(STATUS.DEFAULT);
+  const plausible = usePlausible();
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -31,6 +33,12 @@ function EmailSignup() {
     } else {
       setStatus(STATUS.ERROR);
     }
+
+    plausible('Subscribe', {
+      props: {
+        code: response.status,
+      },
+    });
 
     return;
   }
