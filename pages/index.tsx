@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       <Script
         defer
         data-domain="docploy.com"
-        src="https://plausible.io/js/plausible.js"
+        src="https://plausible.io/js/script.outbound-links.js"
       ></Script>
 
       <div className="m-auto max-w-7xl">
