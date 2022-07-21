@@ -75,8 +75,9 @@ const Home: NextPage = () => {
 
           <div className="gap-x-4 grid grid-cols-2 mb-24">
             <div>
-              <h3 className="text-3xl mb-4">
+              <h3 className="text-3xl mb-4 text-gray-500 italic">
                 Enforce rules to guarantee a consistent style across every page
+                (coming soon)
               </h3>
               <p className="text-xl">
                 Developers no longer need to read style guides. Writers no
@@ -94,7 +95,9 @@ const Home: NextPage = () => {
               <LinkOutput />
             </div>
             <div>
-              <h3 className="text-3xl mb-4">Check every link</h3>
+              <h3 className="text-3xl mb-4 text-gray-500 italic">
+                Check every link is working (coming soon)
+              </h3>
               <p className="text-xl">
                 Every build will check each link in the documentation to make
                 sure they go to a valid website.
