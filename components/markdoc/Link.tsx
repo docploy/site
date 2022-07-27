@@ -6,7 +6,7 @@ type Props = {
 function Link(props: Props) {
   const { children, href } = props;
   return (
-    <a href={href} className="text-blue-400 underline">
+    <a href={href} className="text-blue-600 underline">
       {children}
     </a>
   );
