@@ -2,16 +2,22 @@ import axios from 'axios';
 import { usePlausible } from 'next-plausible';
 import { useState } from 'react';
 
+type Props = {
+  event: string;
+};
+
 const STATUS = {
   DEFAULT: 'DEFAULT',
   SUCCESS: 'SUCCESS',
   ERROR: 'ERROR',
 };
 
-function EmailSignup() {
+function EmailSignup(props: Props) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState(STATUS.DEFAULT);
   const plausible = usePlausible();
+
+  const { event = 'Unknown' } = props;
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -34,7 +40,7 @@ function EmailSignup() {
       setStatus(STATUS.ERROR);
     }
 
-    plausible('Subscribe', {
+    plausible(event, {
       props: {
         code: response.status,
       },
@@ -45,9 +51,6 @@ function EmailSignup() {
 
   return (
     <div>
-      <h3 className="mb-4 text-center text-slate-500 text-xl">
-        Or, subscribe to receive notifications when we adopt more platforms{' '}
-      </h3>
       <div className="m-auto max-w-xl">
         <form
           onSubmit={(e) => onSubmit(e)}
