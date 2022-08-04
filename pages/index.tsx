@@ -6,8 +6,11 @@ import Head from 'next/head';
 import LinkOutput from 'components/LinkOutput';
 import type { NextPage } from 'next';
 import RulesOutput from 'components/RulesOutput';
+import { useUser } from 'contexts/user';
 
 const Home: NextPage = () => {
+  const { user } = useUser();
+
   return (
     <div>
       <Head>
