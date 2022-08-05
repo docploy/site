@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { auth, isProUser } from 'utils/firebase';
 
-import axios from 'axios';
-import { supabase } from 'utils/supabase';
-import { useRouter } from 'next/router';
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 type Props = {
   children: React.ReactNode;
@@ -10,79 +10,39 @@ type Props = {
 
 interface Context {
   user: any;
-  login: any;
-  logout: any;
   isLoading: boolean;
+  logout: () => void;
+  isPro: boolean;
 }
 
 const Context = createContext<Context>({
   user: null,
-  login: null,
-  logout: null,
   isLoading: true,
+  logout: () => null,
+  isPro: false,
 });
 
 const Provider = ({ children }: Props) => {
-  const [user, setUser] = useState(supabase.auth.user());
-  const [isLoading, setIsLoading] = useState(true);
-  const router = useRouter();
+  const [user, isLoading, error] = useAuthState(auth);
+  const [isPro, setIsPro] = useState(false);
 
   useEffect(() => {
-    const getUserProfile = async () => {
-      const sessionUser = supabase.auth.user();
-
-      if (sessionUser) {
-        const { data: profile } = await supabase
-          .from('profile')
-          .select('*')
-          .eq('id', sessionUser.id)
-          .single();
-
-        setUser({
-          ...sessionUser,
-          ...profile,
-        });
-
-        setIsLoading(false);
+    (async () => {
+      if (user) {
+        setIsPro(await isProUser(user));
       }
-    };
-
-    getUserProfile();
-
-    supabase.auth.onAuthStateChange(() => {
-      getUserProfile();
-    });
-  }, []);
-
-  useEffect(() => {
-    axios.post('/api/set-cookie', {
-      event: user ? 'SIGNED_IN' : 'SIGNED_OUT',
-      session: supabase.auth.session(),
-    });
+    })();
   }, [user]);
 
-  const login = async () => {
-    await supabase.auth.signIn(
-      {
-        provider: 'github',
-      },
-      {
-        redirectTo: process.env.NEXT_PUBLIC_BASE_URL,
-      }
-    );
-  };
-
   const logout = async () => {
-    await supabase.auth.signOut();
-    setUser(null);
-    router.push('/');
+    return await signOut(auth);
   };
 
   const exposed = {
     user,
-    login,
-    logout,
     isLoading,
+    logout,
+    isPro,
   };
 
   return <Context.Provider value={exposed}>{children}</Context.Provider>;
