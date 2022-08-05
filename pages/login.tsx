@@ -1,8 +1,15 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useUser } from 'contexts/user';
 
 function Login() {
+  const router = useRouter();
   const { login } = useUser();
+
+  async function loginToRedirect() {
+    await login();
+    router.push('/');
+  }
 
   return (
     <div>
@@ -17,7 +24,7 @@ function Login() {
 
       <div className="text-center">
         <button
-          onClick={login}
+          onClick={loginToRedirect}
           className="bg-black w-448 font-bold text-white p-4 rounded-md"
         >
           Login with GitHub
