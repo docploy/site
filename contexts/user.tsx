@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { auth, isProUser } from 'utils/firebase';
+import { auth, isProUser, login } from 'utils/firebase';
 
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -12,6 +12,7 @@ interface Context {
   user: any;
   isLoading: boolean;
   logout: () => void;
+  login: () => void;
   isPro: boolean;
 }
 
@@ -19,6 +20,7 @@ const Context = createContext<Context>({
   user: null,
   isLoading: true,
   logout: () => null,
+  login: () => null,
   isPro: false,
 });
 
@@ -38,10 +40,16 @@ const Provider = ({ children }: Props) => {
     return await signOut(auth);
   };
 
+  // Wrapping the login as an async function to make the interface consistent with logout
+  const awaitedLogin = async () => {
+    return await login();
+  };
+
   const exposed = {
     user,
     isLoading,
     logout,
+    login: awaitedLogin,
     isPro,
   };
 
