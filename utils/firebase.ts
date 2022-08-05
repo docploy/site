@@ -14,7 +14,6 @@ import {
   setDoc,
 } from 'firebase/firestore';
 import { getApps, initializeApp } from 'firebase/app';
-import { getFunctions, httpsCallable } from 'firebase/functions';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
