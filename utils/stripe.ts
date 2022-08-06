@@ -12,6 +12,7 @@ const initializeStripe = async () => {
 };
 
 export const redirectToCheckout = async (user: MergedUser, priceId: string) => {
+  console.log('inside redirectToCheckout');
   const onSnapshotFn = async (sessionId: string) => {
     if (sessionId) {
       const stripe = await initializeStripe();

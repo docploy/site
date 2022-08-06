@@ -70,7 +70,9 @@ export const createCheckoutSession = async (
     cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/?alert=paymentCancelled`,
   });
   onSnapshot(checkoutSession, (doc) => {
+    console.log('inside of onsnapshot');
     const data = doc.data();
+    console.log('data', data);
     if (data?.sessionId) {
       onSnapshotFn(data.sessionId);
     }
