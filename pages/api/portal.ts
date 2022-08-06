@@ -4,15 +4,12 @@ import Stripe from 'stripe';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const {
-    body: { session_id },
+    body: { customer },
   } = req;
 
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
     apiVersion: '2020-08-27',
   });
-
-  const checkoutSession = await stripe?.checkout.sessions.retrieve(session_id);
-  const customer = checkoutSession.customer as string;
 
   const portalSession = await stripe?.billingPortal.sessions.create({
     customer,
