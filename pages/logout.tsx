@@ -9,7 +9,7 @@ function Logout() {
   useEffect(() => {
     logout();
     router.push('/');
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return <p>Logging out</p>;
 }
