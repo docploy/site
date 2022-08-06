@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { auth, isProUser, login } from 'utils/firebase';
-
-import { signOut } from 'firebase/auth';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { User, signOut } from 'firebase/auth';
+import { auth, getUserData, isProUser, login } from 'utils/firebase';
 
 type Props = {
   children: React.ReactNode;
@@ -10,34 +8,47 @@ type Props = {
 
 interface Context {
   user: any;
-  isLoading: boolean;
   logout: () => void;
   login: () => void;
-  isPro: boolean;
 }
 
 const Context = createContext<Context>({
   user: null,
-  isLoading: true,
   logout: () => null,
   login: () => null,
-  isPro: false,
 });
 
+export type MergedUser = User & {
+  isPro?: boolean;
+  stripeId?: string;
+};
+
 const Provider = ({ children }: Props) => {
-  const [user, isLoading, error] = useAuthState(auth);
-  const [isPro, setIsPro] = useState(false);
+  const [user, setUser] = useState<MergedUser | null>(null);
 
   useEffect(() => {
-    (async () => {
+    auth.onAuthStateChanged(async (user: User | null) => {
       if (user) {
-        setIsPro(await isProUser(user));
+        let mergedUser: MergedUser = Object.assign({}, user);
+        const isPro = await isProUser(user);
+        mergedUser.isPro = isPro;
+        if (isPro) {
+          mergedUser.isPro = isPro;
+        }
+        const userData = await getUserData(user);
+
+        if (userData?.stripeId) {
+          mergedUser.stripeId = userData.stripeId;
+        }
+
+        setUser(mergedUser);
       }
-    })();
-  }, [user]);
+    });
+  }, []);
 
   const logout = async () => {
-    return await signOut(auth);
+    await signOut(auth);
+    setUser(null);
   };
 
   // Wrapping the login as an async function to make the interface consistent with logout
@@ -47,10 +58,8 @@ const Provider = ({ children }: Props) => {
 
   const exposed = {
     user,
-    isLoading,
     logout,
     login: awaitedLogin,
-    isPro,
   };
 
   return <Context.Provider value={exposed}>{children}</Context.Provider>;
