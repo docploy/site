@@ -1,19 +1,17 @@
 import { GITHUB_ACTION_URL } from 'constants/url';
 import Link from 'next/link';
 import axios from 'axios';
-import { getSessionId } from 'utils/firebase';
 import router from 'next/router';
 import { useUser } from 'contexts/user';
 
 function Navbar() {
-  const { user, isLoading, isPro } = useUser();
+  const { user } = useUser();
 
   async function loadPortal() {
-    const sessionId: string = await getSessionId(user.uid);
     const {
       data: { url },
     } = await axios.post('/api/portal', {
-      session_id: sessionId,
+      customer: user?.stripeId,
     });
     router.push(url);
   }
@@ -34,17 +32,16 @@ function Navbar() {
           <a className="font-bold">Contact</a>
         </Link>
         {/* TODO: Render the user using SSR to avoid flash of content */}
-        {!isLoading &&
-          (!user ? (
-            <Link href="/login">
-              <a className="font-bold">Login</a>
-            </Link>
-          ) : (
-            <Link href="/logout">
-              <a className="font-bold">Logout</a>
-            </Link>
-          ))}
-        {isPro && (
+        {!user ? (
+          <Link href="/login">
+            <a className="font-bold">Login</a>
+          </Link>
+        ) : (
+          <Link href="/logout">
+            <a className="font-bold">Logout</a>
+          </Link>
+        )}
+        {user?.isPro && (
           <a onClick={loadPortal} className="cursor-pointer font-bold">
             Manage Plan
           </a>
