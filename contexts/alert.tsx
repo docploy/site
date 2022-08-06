@@ -16,10 +16,6 @@ const ALERTS: { [key: string]: Alert } = {
     color: 'green',
     message: 'You have successfully added a payment plan',
   },
-  paymentCancelled: {
-    color: 'green',
-    message: 'You have successfully removed a payment plan',
-  },
 };
 
 interface Context {
