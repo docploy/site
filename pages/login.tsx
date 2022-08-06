@@ -5,10 +5,16 @@ import { useUser } from 'contexts/user';
 function Login() {
   const router = useRouter();
   const { login } = useUser();
+  const redirect = router.query?.redirect as string;
 
   async function loginToRedirect() {
     await login();
-    router.push('/');
+
+    if (!redirect) {
+      router.push('/');
+    } else {
+      router.push(redirect);
+    }
   }
 
   return (
