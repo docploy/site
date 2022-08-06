@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/spinner.css';
 
 import Alert from 'components/Alert';
 import AlertProvider from 'contexts/alert';
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <nav>
                 <Navbar />
               </nav>
-              <main className="m-auto max-w-4xl my-12">
+              <main className="m-auto max-w-4xl my-12 min-h-screen">
                 <Component {...pageProps} />
               </main>
               <footer className="text-center text-gray-500">
