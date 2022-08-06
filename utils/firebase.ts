@@ -8,7 +8,7 @@ import {
   addDoc,
   collection,
   doc,
-  getDocs,
+  getDoc,
   getFirestore,
   onSnapshot,
   setDoc,
@@ -40,33 +40,22 @@ export async function login() {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
 
-    await setDoc(doc(db, 'users', user.uid), {
-      uid: user.uid,
-      email: user.email,
-      name: user.displayName,
-      provider: user.providerData[0].providerId,
-      photoUrl: user.photoURL,
-    });
+    // Set `merge: true` so we do not overwrite `stripeId` when the user logs in
+    await setDoc(
+      doc(db, 'users', user.uid),
+      {
+        uid: user.uid,
+        email: user.email,
+        name: user.displayName,
+        provider: user.providerData[0].providerId,
+        photoUrl: user.photoURL,
+      },
+      { merge: true }
+    );
   } catch (error) {
     console.error(`There was an error logging in: ${error}`);
   }
 }
-
-export const getSessionId = async (uid: string) => {
-  const userRef = await doc(db, 'users', uid);
-  const checkoutSessionRef = await collection(userRef, 'checkout_sessions');
-  const checkoutSessions = await getDocs(checkoutSessionRef);
-
-  let sessionId: string = '';
-  checkoutSessions.forEach((doc) => {
-    const data = doc.data();
-    if (!sessionId) {
-      sessionId = data.sessionId;
-    }
-  });
-
-  return sessionId;
-};
 
 export const createCheckoutSession = async (
   uid: string,
@@ -87,6 +76,13 @@ export const createCheckoutSession = async (
     }
   });
   return checkoutSession;
+};
+
+export const getUserData = async (user: User) => {
+  const userRef = await doc(db, 'users', user.uid);
+  const userDoc = await getDoc(userRef);
+  const data = userDoc.data();
+  return data;
 };
 
 // TODO: This does not support enterprise users
