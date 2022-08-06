@@ -1,5 +1,6 @@
 import { Stripe, loadStripe } from '@stripe/stripe-js';
 
+import type { MergedUser } from 'contexts/user';
 import { createCheckoutSession } from 'utils/firebase';
 
 let stripePromise: Stripe | null;
@@ -10,15 +11,18 @@ const initializeStripe = async () => {
   return stripePromise;
 };
 
-export const redirectToCheckout = async (uid: string, priceId: string) => {
+export const redirectToCheckout = async (user: MergedUser, priceId: string) => {
   const onSnapshotFn = async (sessionId: string) => {
     if (sessionId) {
       const stripe = await initializeStripe();
-      stripe?.redirectToCheckout({ sessionId });
+
+      stripe?.redirectToCheckout({
+        sessionId,
+      });
     }
   };
 
-  await createCheckoutSession(uid, priceId, onSnapshotFn);
+  await createCheckoutSession(user.uid, priceId, onSnapshotFn);
 };
 
 export default initializeStripe;
