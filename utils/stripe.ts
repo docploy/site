@@ -7,13 +7,11 @@ let stripePromise: Stripe | null;
 const initializeStripe = async () => {
   if (!stripePromise) {
     stripePromise = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY || '');
-    console.log('public stripe key', process.env.NEXT_PUBLIC_STRIPE_KEY);
   }
   return stripePromise;
 };
 
 export const redirectToCheckout = async (user: MergedUser, priceId: string) => {
-  console.log('inside redirectToCheckout');
   const onSnapshotFn = async (sessionId: string) => {
     if (sessionId) {
       const stripe = await initializeStripe();
