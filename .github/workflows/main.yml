@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  docploy:
+    name: Docploy
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+    steps:
+      - name: Publish docs
+        uses: docploy/docploy-action@v1.4
+        with:
+          baseUrl: 'https://docploy.github.io/site' # replace this with your GitHub Pages url
+          docsDir: 'docs'
