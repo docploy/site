@@ -1,6 +1,6 @@
 # Installation
 
-Docploy currently supports GitHub codebases. We use GitHub Actions to test and deploy your documentation to GitHUb Pages for new pull requests.
+Docploy currently supports code run on GitHub. GitHub Actions are used to test and deploy your documentation to GitHUb Pages.
 
 ## Setting up GitHub Pages
 
@@ -37,5 +37,7 @@ jobs:
         uses: docploy/docploy-action@v1.4
         with:
           baseUrl: 'https://<org>.github.io/<repo>' # replace this with your GitHub Pages url
-          docsDir: 'docs'
+          docsDir: 'docs' # folder under the docploy/ folder
 ```
+
+New code pushes will trigger will deploy your documentation to GitHub.
