@@ -13,11 +13,11 @@ The following syntax renders a callout:
 {% callout
   type="warning"
   content="Hi, I am here to warn you about something very important!"
-%}
+/%}
 ```
 
 {% callout
   type="warning"
   content="Hi, I am here to warn you about something very important!"
-%}
+/%}
 
