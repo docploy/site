@@ -3,7 +3,7 @@ title: Quick Start
 description: How to publish new pages
 ---
 
-You will be able to publish your first document after following the instructions on this page.
+You will learn how to publish new pages after following the instructions on this page.
 
 ## Add your first page
 
@@ -40,7 +40,7 @@ git push origin first_page
 After pushing the new branch, go to your GitHub repository's `Actions` page to see that the workflow was successful.
 
 {% callout
-type="caution"
+type="warning"
 content="We currently only support publishing documentation through GitHub Actions."
 /%}
 
