@@ -14,7 +14,7 @@ In this example, our `Snippet` component imports code from two files.
 {% callout
   type="note"
   content="We recommend putting your snippets in a docploy/snippets/<doc_path> folder, where `doc_path` is the path to your "
-%}
+/%}
 
 The first file, `docploy/snippets/components/snippet.md/js-example.js`, contains the following code:
 
@@ -46,7 +46,7 @@ def test_sum():
 {% callout
   type="note"
   content="Code is wrapped in a testing framework, so the code can be tested during each CI build. See `Testing Code Snippets` for more information."
-%}
+/%}
 
 ## Import the code in the Snippet
 
@@ -69,6 +69,6 @@ The above example will render the following component:
     "snippets/components/snippet.md/js-example.js",
     "snippets/components/snippet.md/py-example.py"
   ]
-%}
+/%}
 
 There will be a tab for each of the paths defined in the `paths` attribute.
