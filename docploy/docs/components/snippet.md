@@ -1,19 +1,21 @@
 ---
 title: Snippet
-description: The Snippet component is used to display code from different files
+description: Use the Snippet component to display code from different files
 ---
 
 The Snippet can import code from different files and display it in a code block with syntax highlighting and tabs.
-You can show how to implement a feature in different programming languages.
+A core Docploy principle is making sure code snippets always work and stay up-to-date.
+In the examples throughout this document, you will see code is defined in a unit testing framework with tests about how the code works.
+Since Docploy is tightly integrated with your codebase's CI platform, we can test that your code runs successfully.
 
 ## Add your code to files
 
-In this example, our `Snippet` component imports code from two files.
-`Snippet`s only import code between `[start]` and `[code]` comments in each file.
+In this example, the `Snippet` component imports code from two files.
+A `Snippet` only imports code between `[start]` and `[code]` comments in each file.
 
 {% callout
   type="note"
-  content="We recommend putting your snippets in a docploy/snippets/<doc_path> folder, where `doc_path` is the path to your "
+  content="We recommend putting your snippets in a docploy/snippets/<doc_path> folder, to organize your snippets."
 /%}
 
 The first file, `docploy/snippets/components/snippet.md/js-example.js`, contains the following code:
@@ -31,7 +33,12 @@ describe('js-example', () => {
 });
 ```
 
-The second file, ``docploy/snippets/components/snippet.md/py-example.py`, contains the following code:
+{% callout
+  type="note"
+  content="Code is wrapped in a testing framework, so the code can be tested during each CI build. See `Testing Code Snippets` for more information."
+/%}
+
+The second file, `docploy/snippets/components/snippet.md/py-example.py`, contains the following code:
 
 ```python
 # [start]
