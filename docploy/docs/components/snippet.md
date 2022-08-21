@@ -18,10 +18,10 @@ A `Snippet` only imports code between `[start]` and `[code]` comments in each fi
   content="We recommend putting your snippets in a docploy/snippets/<doc_path> folder, to organize your snippets."
 /%}
 
-The first file, `docploy/snippets/components/snippet.md/js-example.js`, contains the following code:
+The first file, `docploy/snippets/components/snippet.md/example.test.js`, contains the following code:
 
 ```js
-describe('js-example', () => {
+describe('example', () => {
   it('should return 2', () => {
     // [start]
     function sum() {
@@ -38,7 +38,7 @@ describe('js-example', () => {
   content="Code is wrapped in a testing framework, so the code can be tested during each CI build. See `Testing Code Snippets` for more information."
 /%}
 
-The second file, `docploy/snippets/components/snippet.md/py-example.py`, contains the following code:
+The second file, `docploy/snippets/components/snippet.md/test_example.py`, contains the following code:
 
 ```python
 # [start]
@@ -50,11 +50,6 @@ def test_sum():
   assert sum() == 2
 ```
 
-{% callout
-  type="note"
-  content="Code is wrapped in a testing framework, so the code can be tested during each CI build. See `Testing Code Snippets` for more information."
-/%}
-
 ## Import the code in the Snippet
 
 You can use the `paths` attribute to define an array of paths relative to the `docploy/` folder.
@@ -63,8 +58,8 @@ By default, a `Snippet` will look at the file extension to determine the tab lab
 ```yaml
 {% snippet
   paths=[
-    "snippets/components/snippet.md/js-example.js",
-    "snippets/components/snippet.md/py-example.py"
+    "snippets/components/snippet.md/example.test.js",
+    "snippets/components/snippet.md/test_example.py"
   ]
 /%}
 ```
@@ -73,8 +68,8 @@ The above example will render the following component:
 
 {% snippet
   paths=[
-    "snippets/components/snippet.md/js-example.js",
-    "snippets/components/snippet.md/py-example.py"
+    "snippets/components/snippet.md/example.test.js",
+    "snippets/components/snippet.md/test_example.py"
   ]
 /%}
 
