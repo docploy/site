@@ -59,7 +59,7 @@ By default, a `Snippet` will look at the file extension to determine the tab lab
     "snippets/components/snippet.md/js-example.js",
     "snippets/components/snippet.md/py-example.py"
   ]
-%}
+/%}
 ```
 
 The above example will render the following component:
