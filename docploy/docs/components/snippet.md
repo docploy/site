@@ -37,7 +37,7 @@ describe('example', () => {
 
 {% callout
   type="note"
-  content="Code is wrapped in a testing framework, so the code can be tested during each CI build. See `Testing Code Snippets` for more information."
+  content="Code is wrapped in a testing framework, so the code can be tested during each CI build. See `Test Code Snippets` for more information."
 /%}
 
 The second file, `docploy/snippets/components/snippet.md/test_example.py`, contains the following code:
