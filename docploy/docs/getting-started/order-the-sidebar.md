@@ -5,9 +5,9 @@ description: Customize how sidebar items are ordered
 
 # Add a sidebar config
 
-Add a `docploy/sidebar.yaml` file to specify how you want your documentation pages to show up in the sidebar.
+Add a `docploy/sidebar.yaml` file to specify how you want your documentation items to show up in the sidebar.
 
-The following directory structure,
+The following directory structure:
 
 ```
 docs/
@@ -30,7 +30,7 @@ will be rendered in the sidebar in the following order:
 - Index
 ```
 
-A more sensible ordering would look like the following because the most common documentation is listed higher:
+A more sensible ordering would have `Index` and `Getting Started` higher in the sidebar:
 
 ```
 - Index
@@ -41,7 +41,7 @@ A more sensible ordering would look like the following because the most common d
   - Callout
 ```
 
-Add the following to the `docploy/sidebar.yaml` file:
+You can add the following to the `docploy/sidebar.yaml` file to achieve our goal:
 
 ```
 - index

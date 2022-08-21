@@ -5,7 +5,7 @@ description: Use a Callout to bring attention to important information
 
 You can add a callout to emphasize information that breaks the flow of the page.
 
-## Add the callout
+## Add the Callout
 
 Here is an example of using the callout:
 
