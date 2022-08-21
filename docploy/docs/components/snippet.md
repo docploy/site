@@ -4,7 +4,9 @@ description: Use the Snippet component to display code from different files
 ---
 
 The Snippet can import code from different files and display it in a code block with syntax highlighting and tabs.
+
 A core Docploy principle is making sure code snippets always work and stay up-to-date.
+
 In the examples throughout this document, you will see code is defined in a unit testing framework with tests about how the code works.
 Since Docploy is tightly integrated with your codebase's CI platform, we can test that your code runs successfully.
 
