@@ -21,9 +21,9 @@ Here is an example of using the callout:
   content="Hi, I am here to warn you about something very important!"
 /%}
 
-## Using different variations
+## Use different types
 
-You can use three values for the `type` attributes: `note`, `warning`, and `caution`.
+You can use three values for the `type` attribute: `note`, `warning`, and `caution`.
 
 {% callout
   type="note"
