@@ -27,6 +27,11 @@ Add the following to your repo's `.github/workflows/main.yml`:
   content="Replace the `baseUrl` and `docsDir` in the `main.yml` example below"
 /%}
 
+{% callout
+  type="caution"
+  content="Each new code push will deploy and overwrite the current documentation to your GitHub Page."
+/%}
+
 ```yaml
 on: [push]
 
@@ -46,8 +51,3 @@ jobs:
           baseUrl: 'https://<org>.github.io/<repo>' # replace this with your GitHub Pages url
           docsDir: 'docs' # the docs/ folder under the docploy/ folder with your .md files
 ```
-
-{% callout
-  type="caution"
-  content="Each new code push will deploy and overwrite the current documentation to your GitHub Page."
-/%}
