@@ -24,7 +24,7 @@ Add the following to your repo's `.github/workflows/main.yml`:
 
 {% callout
   type="note"
-  content="Replace the baseUrl and docsDir in the main.yml example below"
+  content="Replace the `baseUrl` and `docsDir` in the `main.yml` example below"
 /%}
 
 ```yaml
