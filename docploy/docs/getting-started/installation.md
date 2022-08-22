@@ -1,4 +1,7 @@
-# Installation
+---
+title: Installation
+description: Set up Docploy to deploy to your GitHub Pages
+---
 
 {% callout
   type="warning"
