@@ -16,7 +16,7 @@ Go to your GitHub repo's **Settings** page.
 
 Click on **Pages** in the left sidebar.
 
-Under **Source**, select **GitHub Actions**.
+Under **Build and Deployment**, **Source**, select **GitHub Actions**.
 
 ## Enable Docploy
 
