@@ -1,24 +1,28 @@
 # Installation
 
-Docploy currently supports code run on GitHub. GitHub Actions are used to test and deploy your documentation to GitHUb Pages.
+{% callout
+  type="warning"
+  content="Docploy is currently available for GitHub as an Action"
+/%}
 
-## Setting up GitHub Pages
+Docploy builds the `.md` files located under your `docploy/docs/` folder and deploys them to GitHub Pages. You can set up Docploy on GitHub by following the steps on this page.
 
-Go to your GitHub repo's **Settings**.
+## Enable GitHub Pages
+
+Go to your GitHub repo's **Settings** page.
 
 Click on **Pages** in the left sidebar.
 
 Under **Source**, select **GitHub Actions**.
 
-<callout danger>We will deploy to this branch, and we will overwrite all of the current contents
+## Enable Docploy
 
-## Setting up GitHub Action
+Add the following to your repo's `.github/workflows/main.yml`:
 
-Set up a GitHub Action to deploy your Docploy docs on each push.
-
-Add the following to `.github/workflows/main.yml`:
-
-<add a callout to replace values>
+{% callout
+  type="note"
+  content="Replace the baseUrl and docsDir in the main.yml example below"
+/%}
 
 ```yaml
 on: [push]
@@ -37,7 +41,10 @@ jobs:
         uses: docploy/docploy-action@v1.4
         with:
           baseUrl: 'https://<org>.github.io/<repo>' # replace this with your GitHub Pages url
-          docsDir: 'docs' # folder under the docploy/ folder
+          docsDir: 'docs' # the docs/ folder under the docploy/ folder with your .md files
 ```
 
-New code pushes will trigger will deploy your documentation to GitHub.
+{% callout
+  type="caution"
+  content="Each new code push will deploy and overwrite the current documentation to your GitHub Page."
+/%}
