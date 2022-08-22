@@ -16,7 +16,7 @@ One of Docploy's core principles is testing code snippets to save users' time fr
 
 ## Javascript
 
-Docploy automatically runs <add links here>Jest for files with the `*.test.js` extension under the `docploy/` directory.
+Docploy automatically runs [Jest](https://jestjs.io/) for files with the `*.test.js` extension under the `docploy/` directory.
 
 ```js
 describe('example', () => {
