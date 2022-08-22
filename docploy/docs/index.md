@@ -18,10 +18,12 @@ You can save your developers' time because they will no longer need to perform r
 
 # Comparison
 
-## Knowledge Bases
-
-## Markdown Generators
+Other documentation solutions include static site generators on one end and Wiki platforms on the other end. Both are fine solutions for sharing static knowledge quickly. But, there are many manual tasks involved with maintaining documentation that can consume your developers' time. When left unchecked, documentation can quickly grow out of control.
 
 ## Wikis
 
-Current documentation solutions include Markdown site generators on one end and Wiki knowledge bases on the other end. Both are fine solutions for sharing static knowledge quickly. But, there are many manual tasks involved with maintaining documentation that can consume peoples' time. When left unchecked, documentation can quickly grow out of control:
+Wikis provide a good solution for storing and reading static content. You can quickly create a new document. But, they can quickly turn into a wild west scenario as the number of documents scale up. They tend to store stale code, which can confuse onboarding or veteran users and cause them to waste their time trying to debug the root cause of the issue. Wikis live independently of your code, so when a breaking code change is introduced, many Wiki pages can go out of date.
+
+## Static Site Generators
+
+Static site generators are a good solution for keeping your documentation tied to your code. But, you need to set up and maintain your code and tooling. There is an opportunity cost for spending time on documentation when you could be building out your product instead. Static site generators also suffer from the same drawbacks as Wikis: code can get outdated, lack of a consistent page structure, and lack of grammar/syntax validation.
