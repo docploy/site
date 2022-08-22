@@ -12,7 +12,9 @@ Docploy is a documentation platform built to integrate your documentation and co
 - Enforces a consistent style guide
 - Recommends grammar and syntax
 
-We make it easy to build and maintain your documentation so you can guarantee a high quality developer experience. You can save your developers' time because they will no longer need to perform routine checks to make sure how-to instructions are still valid. You can save your users' time beause they won't need to scratch their head wondering if they did something wrong when the documentation is out of date.
+We make it easy to build and maintain your documentation so you can guarantee a high quality developer experience.
+
+You can save your developers' time because they will no longer need to perform routine checks to make sure how-to instructions are still valid. You can save your users' time beause they won't need to scratch their head wondering if they did something wrong when the documentation is out of date.
 
 # Comparison
 
