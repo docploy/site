@@ -22,6 +22,9 @@ function Navbar() {
         <span className="cursor-pointer font-bold text-2xl">Docploy</span>
       </Link>
       <div className="flex gap-8 items-center">
+        <Link href="https://docploy.github.io/site/">
+          <a className="font-bold">Docs</a>
+        </Link>
         <Link href="/pricing">
           <a className="font-bold">Pricing</a>
         </Link>
