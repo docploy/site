@@ -3,11 +3,11 @@ title: Callout
 description: Use a Callout to bring attention to important information
 ---
 
-You can add a callout to emphasize information that breaks the flow of the page.
+You can add a `callout` to add emphasis to important information on a page.
 
 ## Add the Callout
 
-Here is an example of using the callout:
+Here is an example of using the `callout`:
 
 ```yaml
 {% callout
@@ -21,7 +21,7 @@ Here is an example of using the callout:
   content="Hi, I am here to warn you about something very important!"
 /%}
 
-## Use different types
+## Use the appropriate type
 
 You can use three values for the `type` attribute: `note`, `warning`, and `caution`.
 

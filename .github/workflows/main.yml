@@ -13,5 +13,5 @@ jobs:
       - name: Publish docs
         uses: docploy/docploy-action@main
         with:
-          baseUrl: 'https://docploy.github.io/site' # replace this with your GitHub Pages url
+          baseUrl: 'https://docploy.github.io/site'
           docsDir: 'docs'

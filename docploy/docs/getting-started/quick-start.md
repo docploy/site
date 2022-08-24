@@ -24,8 +24,8 @@ I am here to introduce my first document to you.
 The `docploy/docs/index.md` document is served as the main documentation page.
 
 {% callout
-type="note"
-content="Each page is written using Markdown syntax."
+  type="note"
+  content="Each page is written using Markdown syntax."
 /%}
 
 Use `git` to commit your changes into a new branch, then push the branch to trigger a workflow to publish your new docuemntation.
@@ -40,8 +40,8 @@ git push origin first_page
 After pushing the new branch, go to your GitHub repository's `Actions` page to see that the workflow was successful.
 
 {% callout
-type="warning"
-content="We currently only support publishing documentation through GitHub Actions."
+  type="warning"
+  content="We support publishing documentation through GitHub Actions right now."
 /%}
 
 Visit the `baseUrl` defined in `.github/workflows/main.yml` file to see your new page.
@@ -67,9 +67,9 @@ Top Level
     Another Page
 ```
 
-This example shows how to add new pages under different sections. The `.../top-level/...` directory is formatted as `Top Level` in the sidebar, and all `.md` pages within that directory are placed within the same section.
+This example shows how to add new pages under different sidebar sections. The `.../top-level/...` directory is formatted as `Top Level` in the sidebar, and all `.md` pages within that directory are placed within the same section.
 
 {% callout
-type="note"
-content="Visit the Order The Sidebar page to learn how to change the page order."
+  type="note"
+  content="Visit the Order The Sidebar page to learn how to change the page order."
 /%}

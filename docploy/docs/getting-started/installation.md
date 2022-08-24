@@ -1,11 +1,11 @@
 ---
 title: Installation
-description: Set up Docploy to deploy to your GitHub Pages
+description: Set up Docploy to deploy to GitHub Pages
 ---
 
 {% callout
   type="warning"
-  content="Docploy is currently available for GitHub as an Action"
+  content="Docploy is currently available for GitHub as an Action. Other platform support is on the roadmap."
 /%}
 
 Docploy builds the `.md` files located under your `docploy/docs/` folder and deploys them to GitHub Pages. You can set up Docploy on GitHub by following the steps on this page.
@@ -18,7 +18,7 @@ Click on **Pages** in the left sidebar.
 
 Under **Build and Deployment**, **Source**, select **GitHub Actions**.
 
-## Enable Docploy
+## Add the Docploy action
 
 Add the following to your repo's `.github/workflows/main.yml`:
 

@@ -3,17 +3,17 @@ title: Snippet
 description: Use the Snippet component to display code from different files
 ---
 
-The Snippet can import code from different files and display it in a code block with syntax highlighting and tabs.
+The Snippet can import code from different files and display them in a code block with syntax highlighting and tabs.
 
 A core Docploy principle is making sure code snippets always work and stay up-to-date.
 
-In the examples throughout this document, you will see code is defined in a unit testing framework with tests about how the code works.
-Since Docploy is tightly integrated with your codebase's CI platform, we can test that your code runs successfully.
+In the examples throughout this page, code is defined in a unit testing framework so we can test that the code works.
+Since Docploy is tightly integrated with GitHub Actions, we can test that each code snippet runs successfully.
 
 ## Add your code to files
 
-In this example, the `Snippet` component imports code from two files.
-A `Snippet` only imports code between `[start]` and `[code]` comments in each file.
+In this example, the `snippet` component imports code from two files, one Javascript file and one Python file.
+A `snippet` only imports code between `[start]` and `[code]` comments in each file. It is important we hide the testing details and only show the important code to the user.
 
 {% callout
   type="note"
@@ -37,7 +37,7 @@ describe('example', () => {
 
 {% callout
   type="note"
-  content="Code is wrapped in a testing framework, so the code can be tested during each CI build. See `Test Code Snippets` for more information."
+  content="This code uses the Jest testing framework, so the code can be tested during each CI build. See `Test Code Snippets` for more information."
 /%}
 
 The second file, `docploy/snippets/components/snippet.md/test_example.py`, contains the following code:
@@ -55,7 +55,7 @@ def test_sum():
 ## Import the code in the Snippet
 
 You can use the `paths` attribute to define an array of paths relative to the `docploy/` folder.
-By default, a `Snippet` will look at the file extension to determine the tab label for each file.
+By default, a `snippet` will look at the file extension to determine the tab label for each file.
 
 ```yaml
 {% snippet

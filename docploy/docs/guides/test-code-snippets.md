@@ -5,12 +5,12 @@ description: Run tests on your code snippets
 
 {% callout
   type="warning"
-  content="Only Jest support for Javascript code snippets is currently available."
+  content="We only support running Jest on Javascript code snippets right now."
 /%}
 
 # Why test your code snippets
 
-One of Docploy's core principles is testing code snippets to save users' time from trying to run outdated code snippets.
+One of Docploy's core principles is testing code snippets to reduce users' time waste trying out outdated code and to reduce developers' time by automating documentation testing.
 
 # How to test code snippets
 
@@ -31,9 +31,9 @@ describe('example', () => {
 });
 ```
 
-This example is written as a Jest test. Only the contenet wrapped within the `// [start]` and `// [end]` lines will be shown. But, the test for verifying the `sum()` function, ` expect(sum()).toEqual(2);`, will run in the CI build to make sure that the code snippet is valid.
+This example is written as a Jest test. Only the contenet wrapped within the `// [start]` and `// [end]` lines will be shown to the user in the code snippet. But, the test for verifying the `sum()` function, ` expect(sum()).toEqual(2);`, will run in the CI build to make sure that the code snippet is valid.
 
-You should add assertions for any code snippets that you render.
+You should add assertions for any code snippets that you render. The above example tests the `sum()` function returns `2`.
 
 ```yaml
 {% snippet
