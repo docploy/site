@@ -7,7 +7,7 @@ import { useUser } from 'contexts/user';
 function Navbar() {
   const { user } = useUser();
 
-  // TODO(on: date("2022-08-24"), to: charlie) Validate that loading the portal works
+  // TODO(on: date("2022-08-26"), to: cvuong) Validate that loading the portal works
   async function loadPortal() {
     const {
       data: { url },
