@@ -464,10 +464,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@markdoc/markdoc@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@markdoc/markdoc/-/markdoc-0.1.4.tgz#2f229ce3feb80aa781c0d8f453f7a7a614e1248a"
-  integrity sha512-WOm+jwCeDyWtshIc5tjZ/AD+rFpqL9b1YAUiC975VlZISxRXt2G6Df5G3RwH420Jbavtik50r2tDInnEWIS8nQ==
+"@markdoc/markdoc@^0.1.3":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@markdoc/markdoc/-/markdoc-0.1.6.tgz#3ac13e8d135378231e83dc7faf3a4c73fb0fad0a"
+  integrity sha512-I+QvtEjeZpl8H8uRbSuILwlUw/8ngogQnHeXKmxigJcvLXqZ8BJSldCPXjiVKpQ5vZOpjrblwAAkTI4JeEN3ZA==
 
 "@next/env@12.2.2":
   version "12.2.2"
@@ -2387,6 +2387,11 @@ prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
+
+prism-react-renderer@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.3.5.tgz#786bb69aa6f73c32ba1ee813fbe17a0115435085"
+  integrity sha512-IJ+MSwBWKG+SM3b2SUfdrhC+gu01QkV2KmRQgREThBfSQRoufqRfxfHUxpG1WcaFjP+kojcFyO9Qqtpgt3qLCg==
 
 prismjs@^1.28.0:
   version "1.28.0"
