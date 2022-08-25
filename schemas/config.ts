@@ -29,17 +29,13 @@ const config = {
     fence: {
       render: 'Fence',
       attributes: {
-        content: { type: String, render: false, required: true },
-        language: { type: String, render: 'language' },
-        process: { type: Boolean, render: false, default: true },
-      },
-      transform(node: any, config: any) {
-        const attributes = node.transformAttributes(config);
-        const children = node.children.length
-          ? node.transformChildren(config)
-          : [node.attributes.content];
-
-        return new Tag('Fence', attributes, children);
+        content: {
+          type: String,
+          required: true,
+        },
+        language: {
+          type: String,
+        },
       },
     },
     link: {

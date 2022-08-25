@@ -1,25 +1,40 @@
-import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/components/prism-core';
 
-import prismjs from 'prismjs';
+import Highlight, { Language, defaultProps } from 'prism-react-renderer';
+
+import okaidia from 'prism-react-renderer/themes/okaidia';
 
 type Props = {
   children: string;
-  language?: string;
+  language: string;
 };
 
-function Fence(props: Props) {
-  const { children, language = 'text' } = props;
-  const html = prismjs.highlight(
-    children,
-    prismjs.languages[language],
-    language
-  );
-
+function Fence({ children, language }: Props) {
+  console.log('children', children);
   return (
-    <pre
-      className={`language-${language} rounded-md !text-sm !p-6`}
-      dangerouslySetInnerHTML={{ __html: html }}
-    ></pre>
+    <div className="bg-slate-800 my-4 overflow-x-auto px-8 pt-4 relative rounded-lg">
+      <Highlight
+        {...defaultProps}
+        code={children}
+        language={language as Language}
+        theme={okaidia}
+      >
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre
+            className={className + ' !text-sm !bg-slate-800 !p-0'}
+            style={style}
+          >
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        )}
+      </Highlight>
+    </div>
   );
 }
 
