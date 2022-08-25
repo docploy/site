@@ -15,11 +15,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <AlertProvider>
           <Alert />
           <div className="m-8">
-            <div className="m-auto max-w-7xl">
+            <div className="m-auto max-w-5xl">
               <nav>
                 <Navbar />
               </nav>
-              <main className="m-auto max-w-4xl my-12 min-h-screen">
+              <main className="m-auto my-12 min-h-screen w-full">
                 <Component {...pageProps} />
               </main>
               <footer className="text-center text-gray-500">
