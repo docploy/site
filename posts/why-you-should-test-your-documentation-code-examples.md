@@ -12,7 +12,7 @@ One day, I was trying to get a code example working on my computer. After an hou
 
 # Case for docs-as-code
 
-The primary issue with wikis as developmr documentation is they are far removed from the source of truth, the actual code. I advocate checking your documentation into the same version control as your code, especially if you need to reference any code from your documentation. THis is known as "docs-as-code.". You can create strong links between your code and your documentation. This allows your documentation to import dependencies from your codebase or show code exactly as it appears in your codebase.
+The primary issue with wikis as developer documentation is they are far removed from the source of truth, the actual code. I advocate checking your documentation into the same version control as your code, especially if you need to reference any code from your documentation. This is known as "docs-as-code.". You can create strong links between your code and your documentation. This allows your documentation to import dependencies from your codebase or show code exactly as it appears in your codebase.
 
 # How to import and test code examples
 
