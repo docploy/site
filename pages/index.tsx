@@ -1,12 +1,8 @@
-import CodeSnippet from 'components/CodeSnippet';
-import DeployOutput from 'components/DeployOutput';
 import EmailSignup from 'components/EmailSignup';
 import { GET_STARTED_URL } from 'constants/url';
 import Head from 'next/head';
 import Image from 'next/image';
-import LinkOutput from 'components/LinkOutput';
 import type { NextPage } from 'next';
-import RulesOutput from 'components/RulesOutput';
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +12,6 @@ const Home: NextPage = () => {
       </Head>
       <div className="mb-12">
         <h1 className="font-bold mb-12 text-5xl text-center">
-          {/* Automate your documentation maintenance tasks to save time Prevent */}
           Focus on writing your docs, and we will handle setup, testing, and
           deployment.
         </h1>
@@ -42,7 +37,6 @@ const Home: NextPage = () => {
 
       <div className="gap-x-8 grid grid-cols-2 mb-24">
         <div>
-          {/* <CodeSnippet /> */}
           <Image
             src="/snippet.gif"
             alt="Show how raw code looks in snippet"
@@ -81,7 +75,6 @@ const Home: NextPage = () => {
             width="522"
             height="320"
           />
-          {/* <DeployOutput /> */}
         </div>
       </div>
 
@@ -165,38 +158,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="gap-x-4 grid grid-cols-2 mb-24">
-        <div>
-          <h3 className="text-3xl mb-4 text-gray-500 italic">
-            Enforce rules to guarantee a consistent style across every page
-            (coming soon)
-          </h3>
-          <p className="text-xl">
-            Developers no longer need to read style guides. Writers no longer
-            have to block pull requests for small inconsistencies. The result is
-            documentation gets merged in sooner.
-          </p>
-        </div>
-        <div>
-          <RulesOutput />
-        </div>
-      </div>
-
-      <div className="gap-x-4 grid grid-cols-2 mb-24">
-        <div>
-          <LinkOutput />
-        </div>
-        <div>
-          <h3 className="text-3xl mb-4 text-gray-500 italic">
-            Check every link is working (coming soon)
-          </h3>
-          <p className="text-xl">
-            Every build will check each link in the documentation to make sure
-            they go to a valid website.
-          </p>
-        </div>
-      </div> */}
     </div>
   );
 };
